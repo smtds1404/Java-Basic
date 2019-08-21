@@ -9,12 +9,14 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+
 public class JavascriptAlert {
 
 	public static void main(String[] args) throws IOException, InterruptedException {
-		// System.setProperty("webdriver.chrome.driver","C:\\Users\\AE13127\\Desktop\\Selenium
-		// docs\\Jars\\chromedriver_win32\\chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver;
+		System.setProperty("webdriver.chrome.driver",
+				"C:\\Users\\AE12849_old\\Desktop\\chromedriver_win32\\chromedriver.exe");
+		driver = new ChromeDriver();
 		driver.get("https://axa.us.com");
 		driver.manage().window().maximize();
 		Thread.sleep(5000);
@@ -28,9 +30,12 @@ public class JavascriptAlert {
 		driver.findElement(By.id("panel-desktop-login")).click();
 		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(src,
-				new File("C:<\\Users\\AE13127\\Desktop\\Selenium docs\\Jars\\Screenshots\\screen1.png>"));
+				new File("C:\\Users\\AE12849_old\\Desktop\\screen1.png>"));
 
-		driver.quit();
+		driver.close();
+		
+		
+		
 		
 	}
 
