@@ -18,14 +18,19 @@ public class ActionClass {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.get("https://www.amazon.com/");
 		Actions action = new Actions(driver);
-		action.moveToElement(driver.findElement(By.xpath("//span[contains(text(),'Account & Lists')]"))).build().perform();
+		action.moveToElement(driver.findElement(By.xpath("//span[contains(text(),'Account & Lists')]"))).build()
+				.perform();
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//span[contains(text(),'Your Account')]")).click();
 
-		
+		/*action.clickAndHold(driver.findElement(By.xpath("//input[contains(@id,'test')]")))
+				.moveToElement(driver.findElement(By.xpath("//input[starts-with(@class,'test')]"))).release().build()
+				.perform();
+		*/
+
 		Thread.sleep(5000);
 		driver.quit();
-		
+
 	}
 
 }
